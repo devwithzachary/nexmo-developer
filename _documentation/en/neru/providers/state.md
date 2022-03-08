@@ -10,19 +10,20 @@ The State provider allows you to store data on NeRu for your project instance to
 
 ## Functions
 
-* `set<T>(key: string, value: T)`
-* `get<T>(key: string)`
-* `del(key: string)`
-* `hset(htable: string, keyValuePairs: [string, string][])`
-* `hmget<T>(htable: string, keys: string[])`
-* `hgetall<T>(htable: string)`
-* `hexists(htable: string, key: string)`
-* `hvals<T>(htable: string)`
-* `hdel(htable: string, key: string)`
-* `rpush<T>(list: string, value: T)`
-* `lpush<T>(list: string, value: T)`
-* `llen(list: string)`
-* `lrange<T>(list: string, startPos: number, endPos: number)`
+* [`set<T>(key: string, value: T)`](/neru/code-snippets/state-provider/key-value-operations#set-a-value)
+* [`get<T>(key: string)`](/neru/code-snippets/state-provider/key-value-operations#get-a-value)
+* [`del(key: string)`](/neru/code-snippets/state-provider/key-value-operations#delete-a-value)
+* [`hset(htable: string, keyValuePairs: [string, string][])`](/neru/code-snippets/state-provider/hash-table-operations#set-hash-table-values)
+* [`hget<T>(htable: string, key: string)`](/neru/code-snippets/state-provider/hash-table-operations#get-a-hash-table-value)
+* [`hmget<T>(htable: string, keys: string[])`](/neru/code-snippets/state-provider/hash-table-operations#getting-multiple-hash-table-values)
+* [`hvals<T>(htable: string)`](/neru/code-snippets/state-provider/hash-table-operations#getting-all-hash-table-values)
+* [`hgetall<T>(htable: string)`](/neru/code-snippets/state-provider/hash-table-operations#get-a-hash-table)
+* [`hexists(htable: string, key: string)`](/neru/code-snippets/state-provider/hash-table-operations#check-a-hash-table-key-exists)
+* [`hdel(htable: string, key: string)`](/neru/code-snippets/state-provider/hash-table-operations#delete-a-hash-table-value)
+* [`lpush<T>(list: string, value: T)`](/neru/code-snippets/state-provider/list-operations#insert-elements-at-the-list-s-start)
+* [`rpush<T>(list: string, value: T)`](/neru/code-snippets/state-provider/list-operations#insert-elements-at-the-list-s-end)
+* [`llen(list: string)`](/neru/code-snippets/state-provider/list-operations#get-a-list-s-length)
+* [`lrange<T>(list: string, startPos: number, endPos: number)`](/neru/code-snippets/state-provider/list-operations#get-a-list-elements-with-a-range)
 
 ## Initializing the State Provider
 
@@ -99,7 +100,7 @@ router.post("/add-customer", async (req, res, next) => {
 	  const instanceState = neru.getInstanceState();
   
 	  const customer = req.body;
-	  await instanceState.hset("customers", [[customer.phone , customer ]] )
+	  await instanceState.hset("customers", [[customer.phone , customer]]);
 	} catch (error) {
 	  next(error);
 	}
