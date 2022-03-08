@@ -198,21 +198,11 @@ navigation_overrides:
         navigation_weight: 5
     code-snippets:
       navigation_weight: 6
-
-
-  # messaging:
-  #   svg: 'message'
-  #   svgColor: 'purple'
-  #   sms:
-  #     navigation_weight: 0
-  #   us-short-codes:
-  #     navigation_weight: 1
-  #     guides:
-  #       2fa:
-  #         navigation_weight: 0
-  #       campaign-subscription-management:
-  #         navigation_weight: 1
-  #       alerts:
-  #         navigation_weight: 2
-  #   conversion-api:
-  #     navigation_weight: 2
+      voice-provider: 
+        navigation_weight: 1
+      messages-provider: 
+        navigation_weight: 2  
+      state-provider: 
+        navigation_weight: 3  
+      scheduler-provider: 
+        navigation_weight: 4

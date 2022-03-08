@@ -71,6 +71,7 @@ en:
     voice-provider: Voice
     scheduler-provider: Scheduler
     voice-provider-conversation: Conversation
+    state-provider: State
 
     administration: Administration
     tasks: Tasks
