@@ -87,4 +87,7 @@ current:
   - name: "Nick Anderson"
     email: "Nick.Anderson@vonage.com"
     role: "Technical Writer"
+  - name: "Zachary Powell"
+    email: "zachary.powell@vonage.com"
+    role: "Sr Android Developer Advocate"
 
