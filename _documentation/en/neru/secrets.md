@@ -30,7 +30,32 @@ neru secrets create --name <name> --file <path/to/file>
 
 ## Accessing your Secrets
 
-When secrets are injected into your instance, they are converted into upper snake case and prefixed with `NERU_SECRET`. So for the earlier example of `foo`, it will be available in your instance on the environment as `NERU_SECRET_FOO`.
+To access a secret in your instance, you need to add it to your configuration file to expose it. Add a `secrets` key to your configuration file with a list of the secrets you want to expose:
+
+```yml
+project:
+    name: neru-test-app
+instances:
+    name: dev
+    runtime: nodejs
+    region: aws.euw1
+    application-id: fcd08ece-f3c2-4adf-bf84-5ba8a1c86e0e
+    configurations:
+        contact:
+            number: "44700000000"
+            type: "phone"
+    secrets:
+        - FOO
+        - BAZ
+```
+
+Now that the secret is in your configuration file, they will be injected into your instance when you run the NeRu debugger or deploy your project. When secrets are injected into your instance, they are converted into upper snake case and prefixed with `NERU_SECRET`.
+
+So for the earlier example of `foo`, it will be available on your instance's environment as `NERU_SECRET_FOO`:
+
+```javascript
+const fooSecret = process.env.NERU_SECRET_FOO;
+```
 
 ## Updating Secrets
 
