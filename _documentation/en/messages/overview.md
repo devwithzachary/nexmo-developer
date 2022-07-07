@@ -9,13 +9,14 @@ navigation_weight: 1
 
 The Messages API allows you to send and in some cases receive messages over SMS, MMS, Facebook Messenger, Viber, and WhatsApp. Further channels may be supported in the future.
 
+> Note: Major US carriers have announced their requirements for a new standard for application-to-person (A2P) messaging in the USA, which applies to all messaging over 10-digit geographic phone numbers, also known as 10 DLC. If you are or are planning to send SMS/MMS traffic from a +1 Country Code 10 Digit Long Code into US networks, you will need to register a brand and campaign in order to get approval for sending messages. See the [10 DLC documentation](10-dlc/overview.md) for details.
+
 The following diagram illustrates how the Vonage Messages API enables you to send messages via multiple channels from a single endpoint:
 
 <img src="/images/messages-overview.png" alt="Messages and Dispatch Overview" style="width: 75%;">
 
 ## Contents
 
-* [Beta](#beta)
 * [Versions](#versions)
 * [Supported features](#supported-features)
 * [External Accounts API](#external-accounts-api)
@@ -26,20 +27,12 @@ The following diagram illustrates how the Vonage Messages API enables you to sen
 * [Use Cases](#use-cases)
 * [Reference](#reference)
 
-## Beta
-
-This API is currently in Beta.
-
-Vonage always welcomes your feedback. Your suggestions help us improve the product. If you do need help, please email [support@vonage.com](mailto:support@vonage.com) and include the Messages API in the subject line. Please note that during the Beta period, support times are limited to Monday to Friday.
-
-During Beta Vonage will expand the capabilities of the API.
-
 ## Versions
 
 There are currently two versions of the API, v0.1 and v1. Each version has its own API endpoint:
 
-- **v0.1**: `https://api.nexmo.com/v0.1/messages`
 - **v1**: `https://api.nexmo.com/v1/messages`
+- **v0.1**: `https://api.nexmo.com/v0.1/messages`
 
 One of the primary differences between the two versions is that v1 provides a much simpler and flatter structure for the JSON structure used in the request and response data. Check the relevant [API specification](/api/messages-olympus) for details of the required structure.
 
@@ -47,7 +40,7 @@ One of the primary differences between the two versions is that v1 provides a mu
 
 As well as the difference in JSON structure, v1 supports some [additional features](#additional-v1-features).
 
-If you are currently using v0.1 of the API, and are intending to move to v1, check our [Migration Guide](/messages/concepts/migration-guide).
+We recommend using v1 of the API. If you are using v0.1 of the API, and are intending to move to v1, check our [Migration Guide](/messages/concepts/migration-guide).
 
 ## Supported features
 
@@ -57,7 +50,7 @@ Channel | Outbound Text | Outbound Image | Outbound Audio | Outbound Video | Out
 :--- | :---: | :---: | :---: | :---: | :---: | :---:
 SMS | ✅ | n/a | n/a | n/a | n/a | n/a
 MMS | ✅ | ✅ | n/a | n/a | n/a | n/a
-Viber Service Messages | ✅ | ✅ | n/a | n/a | n/a | ✅
+Viber Business Messages | ✅ | ✅ | n/a | n/a | n/a | ✅
 Facebook Messenger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
 WhatsApp | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
 
@@ -65,7 +58,7 @@ Channel | Inbound Text | Inbound Image | Inbound Audio | Inbound Video | Inbound
 :--- | :---: | :---: | :---: | :---: | :---: | :---:
 SMS | ✅ | n/a | n/a | n/a | n/a | n/a
 MMS | ✅ | ✅ | n/a | n/a | n/a | n/a
-Viber Service Messages | ✅ | n/a | n/a | n/a | n/a | n/a
+Viber Business Messages | ✅ | n/a | n/a | n/a | n/a | n/a
 Facebook Messenger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
 WhatsApp | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
 
@@ -75,7 +68,7 @@ Channel | Outbound Button | Outbound Location | Outbound Contact
 :--- | :---: | :---: | :---:
 SMS | n/a | n/a | n/a
 MMS | n/a | n/a | n/a
-Viber Service Messages | ✅ | n/a | n/a
+Viber Business Messages | ✅ | n/a | n/a
 Facebook Messenger | ✅ | n/a | n/a
 WhatsApp | ✅ | ✅ | ✅
 
@@ -99,7 +92,7 @@ As well as all of the existing features from v0.1, there are some additional fea
 
 ## External Accounts API
 
-The [External Accounts API](/api/external-accounts) is used to manage your accounts for Viber Service Messages, Facebook Messenger and WhatsApp when using those channels with the Messages and Dispatch APIs.
+The [External Accounts API](/api/external-accounts) is used to manage your accounts for Viber Business Messages, Facebook Messenger and WhatsApp when using those channels with the Messages and Dispatch APIs.
 
 ## Getting started
 

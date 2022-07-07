@@ -52,6 +52,7 @@ en:
     secret-management: Secret Management
     external-accounts: External Accounts API
     whatsapp-provisioning: WhatsApp Provisioning API
+    10-dlc: 10 DLC Support
     vonage-business-cloud: Vonage Business Cloud
     smart-numbers: Smart Numbers
     integration-suite: Vonage Integration Suite
@@ -72,7 +73,7 @@ en:
     product-lifecycle: Product Lifecycle
     whatsapp: WhatsApp
     messenger: Facebook Messenger
-    viber: Viber Service Messages
+    viber: Viber Business Messages
     subaccounts: Subaccounts
     use-cases: Use Cases
   layouts:

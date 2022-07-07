@@ -4,7 +4,7 @@ page:
       - type: section_header
         section_header:
           title: Vonage API Developer Relations Team
-          icon: 
+          icon:
             name: Vlt-icon-group
             color: blue-dark
   - row:
@@ -40,7 +40,7 @@ page:
           content: "<p>Many of the improvements made to Vonage Developer have come from our wonderful community.</p>"
       - type: html
         html:
-          content: "<p>Check out our <a href='https://github.com/Nexmo/nexmo-developer/graphs/contributors'>Contributors</a> page on GitHub.</p>" 
+          content: "<p>Check out our <a href='https://github.com/Nexmo/nexmo-developer/graphs/contributors'>Contributors</a> page on GitHub.</p>"
       - type: html
         html:
           content: "</div>"
@@ -70,6 +70,11 @@ page:
       - type: html
         html:
           content: "<p>If what we are building sounds interesting to you please see our open positions and get in touch with us at <a href='mailto:devrel@vonage.com'>devrel@vonage.com</a>.</p>"
+
+      - type: html
+        html:
+          content: "<div><hr></div>"
+
       - type: career
       - type: html
         html:

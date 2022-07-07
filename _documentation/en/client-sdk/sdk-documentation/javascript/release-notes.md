@@ -6,6 +6,147 @@ navigation_weight: 0
 
 # Release Notes
 
+## Version 9.0.0 - June 30, 2022
+
+### Breaking changes
+
+- Rename `login()` function to `createSession()`
+
+```javascript
+rtc.createSession(token).then((application) => {
+  console.log(application);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+- Rename `logout()` function to `deleteSession()`
+
+```javascript
+rtc.deleteSession().then((response) => {
+  console.log(response);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+### Changes
+
+- Move websocket connection creation to the `createSession()` function
+
+## Version 8.7.3 - June 14, 2022
+
+### Changes
+
+- Added token authentication to `connectivityReport()`
+
+```javascript
+rtc.connectivityReport(token, {
+  dcListCallback: (dcList) => {...dcList, additionalDc}
+}).then((report) => {
+  console.log(report);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+- Added token authentication to `checkMediaServers()`
+
+```javascript
+rtc.checkMediaServers('token', 'nexmo-api-url','dc').then((responseArray) => {
+ console.log(responseArray);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+## Version 8.7.2 - May 27, 2022
+
+### Fix
+
+- Removed unused npm dependencies.
+
+## Version 8.7.1 - May 11, 2022
+
+### New
+
+- Added new `checkMediaServers()` method to return a list with the connection health of the media servers for a specific datacenter.
+
+```javascript
+rtc.checkMediaServers('nexmo-api-url','dc').then((responseArray) => {
+	console.log(responseArray);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+- Added new `checkMediaConnectivity()` method to return the connection health of a single media server.
+
+```javascript
+rtc.checkMediaConnectivity('ip-address','1').then((response) => {
+  console.log(response);
+}).catch((error) => {
+	console.log(error);
+});
+```
+### Changes
+
+- Update `connectivityReport()` to return connection time in ms for connection to https, wss, and media servers
+
+## Version 8.6.0 - April 21, 2022
+
+### New
+
+- Added an optional object argument to the `connectivityReport()`, with optional field `dcListCallback` which accepts a callback function to update data center list
+
+```javascript
+rtc.connectivityReport({
+  dcListCallback: (dcList) => {...dcList, additionalDc}
+}).then((report) => {
+  console.log(report);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+## Version 8.5.0 - April 20, 2022
+
+### New
+
+- Expose `seen()` and `delivered()` functions for message events
+
+```javascript
+messageEvent.seen().then(() => {
+  console.log(`Seen message with id ${messageEvent.id}`);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+- Support new message status events
+  - `message:seen`
+  - `message:delivered`
+  - `message:submitted`
+  - `message:rejected`
+  - `message:undeliverable`
+
+```javascript
+conversation.on("message:delivered", (member, event) => {
+  console.log(`Message with id ${event.id} delivered to ${member.name}`);
+});
+```
+
+- Added new state objects for message events supporting the new statuses
+  - `seen_by`
+  - `delivered_to`
+  - `submitted_to`
+  - `rejected_by`
+  - `undeliverable_to`
+
+### Changes
+
+- Update `connectivityReport()` to use proper endpoints per region
+
 ## Version 8.4.1 - February 14, 2022
 
 ### Fix

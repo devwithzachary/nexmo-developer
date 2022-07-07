@@ -14,21 +14,10 @@ The Meetings API allows you to integrate real-time, high-quality interactive vid
 
 ## Contents
 
-* [Requirements](#requirements): What you will need to get started.
 * [Terminology](#terminology): Key terms and definitions for the Meetings API.
 * [Room Types](#room-types): Defines the types of rooms available.
 * [Code Snippets](#code-snippets): Code and instructions for using the Meetings API.
 * [Reference](#reference): Further information about the Meetings API.
-
-## Requirements
-
-**Vonage Developer Account**: If you don’t have a Vonage account yet, you can get one here: [Vonage Developers Account](https://dashboard.nexmo.com/sign-up?icid=tryitfree_api-developer-adp_nexmodashbdfreetrialsignup_nav).
-
-**Meetings API Activation**: To activate the Meetings API, you need to register with us. Please send an email request, with your API key from the [Vonage API Dashboard](https://dashboard.nexmo.com), to the [Meetings API Team](mailto:meetings-api@vonage.com).
-
-**Application ID and Private Key**: Once you’re logged in to the [Vonage API Dashboard](https://dashboard.nexmo.com), click on Applications and create a new Application. Generate a public and private key and record the private key.
-
-**JSON Web Token (JWT)**: Use the [JWT Generator](https://developer.vonage.com/jwt) to create a JWT using the Application ID and Private Token mentioned above. For further details about JWTs, please see [Vonage Authentication](/concepts/guides/authentication).
 
 ## Terminology
 
@@ -43,7 +32,9 @@ The Meetings API allows you to integrate real-time, high-quality interactive vid
   * **Session**: defined as all events that occur during this time, from when the first participant joins, until the last to leave.
   * **Guest URL**: meeting room URL used by guests.
   * **Host URL**: meeting room URL with meeting administration capabilities used by the host.
+  * **Theme**: the set of colors, logos and styles to apply to given rooms in the account. 
 * **Features**:
+  * **Whitelabel**: ability to create rooms with specific branding or color schemes. 
   * **Chat**: space for sending written messages that are visible to all attendees in the room.
   * **Recording**: you can start a recording manually during a meeting, or set the meeting to record automatically when sending a request.
   * **Room Management**: you can delete, update or retrieve information about rooms.
@@ -66,8 +57,10 @@ There are two room types:
 
 ## Code Snippets
 
+* [Before You Begin](code-snippets/before-you-begin)
 * [Create an Instant Room](code-snippets/create-instant-room)
 * [Create a Long Term Room](code-snippets/create-long-term-room)
+* [Theme Management](code-snippets/theme-management)
 * [Meeting Room Management](code-snippets/room-management)
 * [Callbacks](code-snippets/callbacks)
 
